@@ -55,7 +55,7 @@ body {
     border-radius: 10px;
     border:10px solid #222;
   }
-  #wakeUpTimeSelector, #lunchTimeSelector, #napTimeSelector {
+  #wakeUpTimeSelector, #lunchTimeSelector, #napTimeSelector, #partyTimeSelector {
     padding: 10px 0;
   }
   #partyTimeButton {

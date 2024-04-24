@@ -61,7 +61,9 @@ var updateClock = function()
   {
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
     messageText = "Let's party!";
-  }
+
+  }  
+
   else if (time == wakeuptime)
   {
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
@@ -87,15 +89,21 @@ var updateClock = function()
     image = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
     messageText = "Good evening!";
   }
+  else if (time >= partytime)
+  {
+    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
+    messageText = "PARTYYY!!!!!!!!!";
+  }
   else
   {
     image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
     messageText = "Good afternoon!";
   }
+  
 
   console.log(messageText); 
   timeEventJS.innerText = messageText;
-  lolcatImage.src = image;
+  lolcatImageJS.src = image;
   
   showCurrentTime();
 };
@@ -117,7 +125,7 @@ var partyEvent = function()
         partyTimeButton.innerText = "Party Over!";
         partyTimeButton.style.backgroundColor = "#0A8DAB";
     }
-    else
+    else 
     {
         partytime = -1;
         partyTimeButton.innerText = "Party Time!";
@@ -160,3 +168,15 @@ var napEvent = function()
 };
 
 napTimeSelector.addEventListener("change", napEvent);
+
+
+
+var partyTimeSelector =  document.getElementById("partyTimeSelector");
+
+var partyEvent = function()
+{
+  partytime = partyTimeSelector.value;
+};
+
+partyTimeSelector.addEventListener("change", partyEvent);
+
